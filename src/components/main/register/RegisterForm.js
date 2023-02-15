@@ -3,6 +3,39 @@ const wLg3 = "input-w-lg-3";
 const wLg4 = "input-w-lg-4";
 const smFull = "input-w-sm-full";
 
+const cities = [
+  { value: "", name: "請選擇縣市" },
+  { value: "KLU", name: "基隆市" },
+  { value: "TPH", name: "新北市" },
+  { value: "TPE", name: "臺北市" },
+  { value: "TYC", name: "桃園市" },
+  { value: "HSH", name: "新竹縣" },
+  { value: "HSC", name: "新竹市" },
+  { value: "MAC", name: "苗栗市" },
+  { value: "MAL", name: "苗栗縣" },
+  { value: "TXG", name: "臺中市" },
+  { value: "CWH", name: "彰化縣" },
+  { value: "CWS", name: "彰化市" },
+  { value: "NTC", name: "南投市" },
+  { value: "NTO", name: "南投縣" },
+  { value: "YLH", name: "雲林縣" },
+  { value: "CHY", name: "嘉義縣" },
+  { value: "CYI", name: "嘉義市" },
+  { value: "TNN", name: "臺南市" },
+  { value: "KHH", name: "高雄市" },
+  { value: "IUH", name: "屏東縣" },
+  { value: "PTS", name: "屏東市" },
+  { value: "ILN", name: "宜蘭縣" },
+  { value: "ILC", name: "宜蘭市" },
+  { value: "HWA", name: "花蓮縣" },
+  { value: "HWC", name: "花蓮市" },
+  { value: "TTC", name: "臺東市" },
+  { value: "TTT", name: "臺東縣" },
+  { value: "PEH", name: "澎湖縣" },
+  { value: "KMN", name: "金門縣" },
+  { value: "LNN", name: "連江縣" },
+];
+
 function InputGroup({ className, inputLabel, type, placeHolder }) {
   return (
     <div className={`input-group ${className}`}>
@@ -12,11 +45,28 @@ function InputGroup({ className, inputLabel, type, placeHolder }) {
   );
 }
 
-function InputGroupWithSelect({ className, inputLabel, children }) {
+function CityList() {
+  const cityList = cities.map((city) => (
+    <option key={city.value} value={city.value}>
+      {city.name}
+    </option>
+  ));
+  console.log(cityList);
+  return cityList;
+}
+
+function InputGroupWithSelect({
+  className,
+  inputLabel,
+  required = false,
+  children,
+}) {
   return (
     <div className={`input-group ${className}`}>
       <div className="input-label">{inputLabel}</div>
-      {children}
+      <div className="select-container">
+        <select required={required}>{children}</select>
+      </div>
     </div>
   );
 }
@@ -45,15 +95,13 @@ const RegisterForm = () => {
               className="input-w-lg-2 input-w-sm-s1"
               inputLabel="稱謂"
               children={
-                <div className="select-container">
-                  <select>
-                    <option value="mr" selected>
-                      先生
-                    </option>
-                    <option value="ms">女士</option>
-                    <option value="mx">不明</option>
-                  </select>
-                </div>
+                <>
+                  <option value="mr" selected>
+                    先生
+                  </option>
+                  <option value="ms">女士</option>
+                  <option value="mx">不明</option>
+                </>
               }
             />
             <InputGroup
@@ -81,42 +129,8 @@ const RegisterForm = () => {
             <InputGroupWithSelect
               className={`input-w-lg-2 ${smFull}`}
               inputLabel="縣市"
-              children={
-                <div className="select-container">
-                  <select required>
-                    <option value="">請選擇縣市</option>
-                    <option value="KLU">基隆市</option>
-                    <option value="TPH">新北市</option>
-                    <option value="TPE">臺北市</option>
-                    <option value="TYC">桃園市</option>
-                    <option value="HSH">新竹縣</option>
-                    <option value="HSC">新竹市</option>
-                    <option value="MAC">苗栗市</option>
-                    <option value="MAL">苗栗縣</option>
-                    <option value="TXG">臺中市</option>
-                    <option value="CWH">彰化縣</option>
-                    <option value="CWS">彰化市</option>
-                    <option value="NTC">南投市</option>
-                    <option value="NTO">南投縣</option>
-                    <option value="YLH">雲林縣</option>
-                    <option value="CHY">嘉義縣</option>
-                    <option value="CYI">嘉義市</option>
-                    <option value="TNN">臺南市</option>
-                    <option value="KHH">高雄市</option>
-                    <option value="IUH">屏東縣</option>
-                    <option value="PTS">屏東市</option>
-                    <option value="ILN">宜蘭縣</option>
-                    <option value="ILC">宜蘭市</option>
-                    <option value="HWA">花蓮縣</option>
-                    <option value="HWC">花蓮市</option>
-                    <option value="TTC">臺東市</option>
-                    <option value="TTT">臺東縣</option>
-                    <option value="PEH">澎湖縣</option>
-                    <option value="KMN">金門縣</option>
-                    <option value="LNN">連江縣</option>
-                  </select>
-                </div>
-              }
+              children={<CityList />}
+              required={true}
             />
             <InputGroup
               className={`${wLg4} ${smFull}`}
