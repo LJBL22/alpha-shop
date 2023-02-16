@@ -33,10 +33,11 @@ const Item = ({ id, quantity, price, img, name }) => {
           <div className="product-control-container">
             <div className="product-control">
               <IconMinus className="product-action minus" />
-              <span className="product-count" />
+              <span className="product-count">{3}</span>
               <IconPlus className="product-action plus" />
             </div>
           </div>
+          $3,000
           <div className="price" />
         </div>
       </div>
@@ -49,11 +50,11 @@ const CartInfo = () => {
     <>
       <section className="cart-info shipping col col-12">
         <div className="text">運費</div>
-        <div className="price"></div>
+        <div className="price">免費</div>
       </section>
       <section className="cart-info total col col-12">
         <div className="text">小計</div>
-        <div className="price"></div>
+        <div className="price">$6,000</div>
       </section>
     </>
   );
