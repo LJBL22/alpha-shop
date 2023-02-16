@@ -4,12 +4,16 @@
 
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![](./sumbmitted-phase1.png)
-_Phase 1 submitted screenshot (2023 Feb 12 Sun.)_
+![](./sumbmitted-phase2.png)
+_Phase 2 submitted screenshot (2023 Feb 16 Thur.)_
 
-### Feature:
+~~_Phase 1 submitted screenshot (2023 Feb 12 Sun.)_~~
+
+## 👀 Add Feature:
 
 Phase 1: practice dividing React Components. Show the main static layout.
+
+Phase 2: use rendering list skill, import svg as React Component, using constants file to collect data, finish the main layout
 
 ## 🧑🏻‍💻 Installation
 
