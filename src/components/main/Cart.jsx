@@ -1,4 +1,6 @@
 import React from "react";
+import { ReactComponent as IconMinus } from "../../assets/icons/minus.svg";
+import { ReactComponent as IconPlus } from "../../assets/icons/plus.svg";
 
 const initialItems = [
   {
@@ -21,25 +23,21 @@ const Item = ({ id, quantity, price, img, name }) => {
   return (
     <>
       <div
-        class="product-container col col-12"
+        className="product-container col col-12"
         data-count={quantity}
         data-price={price}
       >
-        <img class="img-container" src={img} alt="product" />
-        <div class="product-info">
-          <div class="product-name">{name}</div>
-          <div class="product-control-container">
-            <div class="product-control">
-              <svg class="product-action minus">
-                <use xlinkHref="#svg-icon-minus"></use>
-              </svg>
-              <span class="product-count"></span>
-              <svg class="product-action plus">
-                <use xlinkHref="#svg-icon-plus"></use>
-              </svg>
+        <img className="img-container" src={img} alt="product" />
+        <div className="product-info">
+          <div className="product-name">{name}</div>
+          <div className="product-control-container">
+            <div className="product-control">
+              <IconMinus className="product-action minus" />
+              <span className="product-count" />
+              <IconPlus className="product-action plus" />
             </div>
           </div>
-          <div class="price"></div>
+          <div className="price" />
         </div>
       </div>
     </>

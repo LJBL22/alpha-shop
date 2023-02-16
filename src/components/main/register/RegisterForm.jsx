@@ -51,7 +51,6 @@ function CityList() {
       {city.name}
     </option>
   ));
-  console.log(cityList);
   return cityList;
 }
 

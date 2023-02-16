@@ -1,6 +1,6 @@
 import React from "react";
 import ProgressControl from "./ProgressControl";
-import Register from "./register/Register";
+import Register from "./Register/Register";
 import Cart from "./Cart";
 
 const Main = () => {
