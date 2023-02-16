@@ -1,4 +1,6 @@
 import React from "react";
+import { ReactComponent as RightArrow } from "../../assets/icons/right-arrow.svg";
+import { ReactComponent as LeftArrow } from "../../assets/icons/left-arrow.svg";
 
 const ProgressControl = () => {
   return (
@@ -6,30 +8,22 @@ const ProgressControl = () => {
       <section class="button-group col col-12" data-phase="address">
         <button class="next">
           下一步
-          <svg class="cursor-point">
-            <use xlinkHref="#svg-icon-right-arrow"></use>
-          </svg>
+          <RightArrow class="cursor-point" />
         </button>
       </section>
       <section class="button-group col col-12" data-phase="shipping">
         <button class="prev">
-          <svg class="cursor-point">
-            <use xlinkHref="#svg-icon-left-arrow"></use>
-          </svg>
+          <LeftArrow class="cursor-point" />
           上一步
         </button>
         <button class="next">
           下一步
-          <svg class="cursor-point">
-            <use xlinkHref="#svg-icon-right-arrow"></use>
-          </svg>
+          <RightArrow class="cursor-point" />
         </button>
       </section>
       <section class="button-group col col-12" data-phase="credit-card">
         <button class="prev">
-          <svg class="cursor-point">
-            <use xlinkHref="#svg-icon-left-arrow"></use>
-          </svg>
+          <LeftArrow class="cursor-point" />
           上一步
         </button>
         <button class="next">確認下單</button>
