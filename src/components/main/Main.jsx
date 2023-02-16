@@ -6,8 +6,8 @@ import Cart from "./Cart";
 const Main = () => {
   return (
     <>
-      <main class="site-main">
-        <div class="main-container">
+      <main className="site-main">
+        <div className="main-container">
           <Register />
           <Cart />
           <ProgressControl />
