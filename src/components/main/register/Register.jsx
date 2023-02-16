@@ -10,6 +10,7 @@ const Register = () => {
       data-phase="1"
       data-total-price="0"
     >
+      {/* register-title */}
       <h2 class="register-title col col-12">結帳</h2>
       <RegisterProgress />
       <RegisterForm />

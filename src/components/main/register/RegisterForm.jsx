@@ -1,40 +1,9 @@
 import React from "react";
+import { cities, titles } from "../../../constants/index";
+
 const wLg3 = "input-w-lg-3";
 const wLg4 = "input-w-lg-4";
 const smFull = "input-w-sm-full";
-
-const cities = [
-  { value: "", name: "請選擇縣市" },
-  { value: "KLU", name: "基隆市" },
-  { value: "TPH", name: "新北市" },
-  { value: "TPE", name: "臺北市" },
-  { value: "TYC", name: "桃園市" },
-  { value: "HSH", name: "新竹縣" },
-  { value: "HSC", name: "新竹市" },
-  { value: "MAC", name: "苗栗市" },
-  { value: "MAL", name: "苗栗縣" },
-  { value: "TXG", name: "臺中市" },
-  { value: "CWH", name: "彰化縣" },
-  { value: "CWS", name: "彰化市" },
-  { value: "NTC", name: "南投市" },
-  { value: "NTO", name: "南投縣" },
-  { value: "YLH", name: "雲林縣" },
-  { value: "CHY", name: "嘉義縣" },
-  { value: "CYI", name: "嘉義市" },
-  { value: "TNN", name: "臺南市" },
-  { value: "KHH", name: "高雄市" },
-  { value: "IUH", name: "屏東縣" },
-  { value: "PTS", name: "屏東市" },
-  { value: "ILN", name: "宜蘭縣" },
-  { value: "ILC", name: "宜蘭市" },
-  { value: "HWA", name: "花蓮縣" },
-  { value: "HWC", name: "花蓮市" },
-  { value: "TTC", name: "臺東市" },
-  { value: "TTT", name: "臺東縣" },
-  { value: "PEH", name: "澎湖縣" },
-  { value: "KMN", name: "金門縣" },
-  { value: "LNN", name: "連江縣" },
-];
 
 function InputGroup({ className, inputLabel, type, placeHolder }) {
   return (
@@ -45,26 +14,23 @@ function InputGroup({ className, inputLabel, type, placeHolder }) {
   );
 }
 
-function CityList() {
-  const cityList = cities.map((city) => (
-    <option key={city.value} value={city.value}>
-      {city.name}
-    </option>
-  ));
-  return cityList;
-}
-
 function InputGroupWithSelect({
   className,
   inputLabel,
   required = false,
-  children,
+  options,
 }) {
   return (
     <div className={`input-group ${className}`}>
       <div className="input-label">{inputLabel}</div>
       <div className="select-container">
-        <select required={required}>{children}</select>
+        <select required={required}>
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.name}
+            </option>
+          ))}
+        </select>
       </div>
     </div>
   );
@@ -93,15 +59,7 @@ const RegisterForm = () => {
             <InputGroupWithSelect
               className="input-w-lg-2 input-w-sm-s1"
               inputLabel="稱謂"
-              children={
-                <>
-                  <option value="mr" selected>
-                    先生
-                  </option>
-                  <option value="ms">女士</option>
-                  <option value="mx">不明</option>
-                </>
-              }
+              options={titles}
             />
             <InputGroup
               className={`${wLg4} input-w-sm-s2`}
@@ -128,7 +86,7 @@ const RegisterForm = () => {
             <InputGroupWithSelect
               className={`input-w-lg-2 ${smFull}`}
               inputLabel="縣市"
-              children={<CityList />}
+              options={cities}
               required={true}
             />
             <InputGroup
