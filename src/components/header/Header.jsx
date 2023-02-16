@@ -1,5 +1,8 @@
 import React from "react";
 import Nav from "./Nav";
+import { ReactComponent as IconLogo } from "../../assets/icons/logo.svg";
+import { ReactComponent as IconToggle } from "../../assets/icons/toggle.svg";
+
 const Header = () => {
   return (
     <>
@@ -11,16 +14,12 @@ const Header = () => {
           {/* navbar-toggle */}
           <input id="navbar-toggle" className="navbar-toggle" type="checkbox" />
           <label htmlFor="navbar-toggle" className="burger-container">
-            <svg className="icon-toggle cursor-point">
-              <use xlinkHref="#svg-icon-toggle" />
-            </svg>
+            <IconToggle className="icon-toggle cursor-point" />
           </label>
           <Nav />
           {/* logo */}
           <a className="header-logo-container" href="#">
-            <svg className="icon-logo cursor-point">
-              <use xlinkHref="#svg-icon-logo" />
-            </svg>
+            <IconLogo className="icon-logo cursor-point" />
           </a>
         </div>
       </header>

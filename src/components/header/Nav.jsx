@@ -1,4 +1,8 @@
 import React from "react";
+import { ReactComponent as IconSearch } from "../../assets/icons/search.svg";
+import { ReactComponent as IconCart } from "../../assets/icons/cart.svg";
+import { ReactComponent as IconMoon } from "../../assets/icons/moon.svg";
+import { ReactComponent as IconSun } from "../../assets/icons/sun.svg";
 
 const SiteMenuList = () => {
   return (
@@ -35,27 +39,15 @@ const SiteMenuList = () => {
 const SiteActionList = () => {
   return (
     <ul className="nav-list site-action-list">
-      {/* search */}
       <li className="nav-item">
-        <svg className="nav-icon cursor-point">
-          <use xlinkHref="#svg-icon-search" />
-        </svg>
+        <IconSearch className="nav-icon cursor-point" />
       </li>
-      {/* cart */}
       <li className="nav-item">
-        <svg className="nav-icon cursor-point">
-          <use xlinkHref="#svg-icon-cart" />
-        </svg>
+        <IconCart className="nav-icon cursor-point" />
       </li>
       <li id="theme-toggle" className="nav-item">
-        {/* moon */}
-        <svg className="nav-icon cursor-point">
-          <use xlinkHref="#svg-icon-moon" />
-        </svg>
-        {/* sun */}
-        <svg className="nav-icon cursor-point">
-          <use xlinkHref="#svg-icon-sun" />
-        </svg>
+        <IconMoon className="nav-icon cursor-point" />
+        <IconSun className="nav-icon cursor-point" />
       </li>
     </ul>
   );
