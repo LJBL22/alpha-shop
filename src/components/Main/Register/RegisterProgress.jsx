@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as IconPgComplete } from "../../../assets/icons/pg-complete.svg";
+import { ReactComponent as IconPgComplete } from "src/assets/icons/pg-complete.svg";
 
 function DataPhase({ dataPhase, text, progressLabel }) {
   return (
@@ -16,7 +16,11 @@ function DataPhase({ dataPhase, text, progressLabel }) {
 }
 
 function DataOrder({ dataOrder }) {
-  return <span className="progress-bar" data-order={dataOrder}></span>;
+  return (
+    <>
+      <span className="progress-bar" data-order={dataOrder}></span>
+    </>
+  );
 }
 
 const RegisterProgress = () => {

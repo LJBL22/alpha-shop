@@ -1,6 +1,6 @@
 import React from "react";
-import { ReactComponent as IconMinus } from "../../assets/icons/minus.svg";
-import { ReactComponent as IconPlus } from "../../assets/icons/plus.svg";
+import { ReactComponent as IconMinus } from "src/assets/icons/minus.svg";
+import { ReactComponent as IconPlus } from "src/assets/icons/plus.svg";
 
 const initialItems = [
   {

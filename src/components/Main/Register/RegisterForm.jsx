@@ -1,5 +1,5 @@
 import React from "react";
-import { cities, titles } from "constants";
+import { cities, titles } from "src/constants";
 
 const wLg3 = "input-w-lg-3";
 const wLg4 = "input-w-lg-4";

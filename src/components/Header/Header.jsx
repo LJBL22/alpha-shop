@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "./Nav";
-import { ReactComponent as IconLogo } from "../../assets/icons/logo.svg";
-import { ReactComponent as IconToggle } from "../../assets/icons/toggle.svg";
+import { ReactComponent as IconLogo } from "src/assets/icons/logo.svg";
+import { ReactComponent as IconToggle } from "src/assets/icons/toggle.svg";
 
 const Header = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
-import { ReactComponent as IconSearch } from "../../assets/icons/search.svg";
-import { ReactComponent as IconCart } from "../../assets/icons/cart.svg";
-import { ReactComponent as IconMoon } from "../../assets/icons/moon.svg";
-import { ReactComponent as IconSun } from "../../assets/icons/sun.svg";
+import { ReactComponent as IconSearch } from "src/assets/icons/search.svg";
+import { ReactComponent as IconCart } from "src/assets/icons/cart.svg";
+import { ReactComponent as IconMoon } from "src/assets/icons/moon.svg";
+import { ReactComponent as IconSun } from "src/assets/icons/sun.svg";
 
 const SiteMenuList = () => {
   return (
