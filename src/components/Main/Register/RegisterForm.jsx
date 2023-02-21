@@ -24,7 +24,7 @@ function InputGroupWithSelect({
     <div className={`input-group ${className}`}>
       <div className="input-label">{inputLabel}</div>
       <div className="select-container">
-        <select required={required}>
+        <select aria-label="label for options" required={required}>
           {options.map((option) => (
             <option key={option.value} value={option.value}>
               {option.name}
@@ -51,54 +51,53 @@ function Phase({ formTitle, dataPhase, children }) {
 
 const RegisterForm = () => {
   return (
-    <div>
-      <section className="form-container col col-12">
-        {/* <!-- address phase --> */}
-        <Phase formTitle="寄送地址" dataPhase="address">
-          <Col12>
-            <InputGroupWithSelect
-              className="input-w-lg-2 input-w-sm-s1"
-              inputLabel="稱謂"
-              options={titles}
-            />
-            <InputGroup
-              className={`${wLg4} input-w-sm-s2`}
-              inputLabel="姓名"
-              type="text"
-              placeHolder="請輸入姓名"
-            />
-          </Col12>
-          <Col12>
-            <InputGroup
-              className={`${wLg3} ${smFull}`}
-              inputLabel="電話"
-              type="tel"
-              placeHolder="請輸入行動電話"
-            />
-            <InputGroup
-              className={`${wLg3} ${smFull}`}
-              inputLabel="Email"
-              type="email"
-              placeHolder="請輸入電子郵件"
-            />
-          </Col12>
-          <Col12>
-            <InputGroupWithSelect
-              className={`input-w-lg-2 ${smFull}`}
-              inputLabel="縣市"
-              options={cities}
-              required={true}
-            />
-            <InputGroup
-              className={`${wLg4} ${smFull}`}
-              inputLabel="地址"
-              type="text"
-              placeHolder="請輸入地址"
-            />
-          </Col12>
-        </Phase>
-        {/* <!-- shipping phase --> */}
-        {/* <form className="col col-12" data-phase="shipping">
+    <section className="form-container col col-12">
+      {/* <!-- address phase --> */}
+      <Phase formTitle="寄送地址" dataPhase="address">
+        <Col12>
+          <InputGroupWithSelect
+            className="input-w-lg-2 input-w-sm-s1"
+            inputLabel="稱謂"
+            options={titles}
+          />
+          <InputGroup
+            className={`${wLg4} input-w-sm-s2`}
+            inputLabel="姓名"
+            type="text"
+            placeHolder="請輸入姓名"
+          />
+        </Col12>
+        <Col12>
+          <InputGroup
+            className={`${wLg3} ${smFull}`}
+            inputLabel="電話"
+            type="tel"
+            placeHolder="請輸入行動電話"
+          />
+          <InputGroup
+            className={`${wLg3} ${smFull}`}
+            inputLabel="Email"
+            type="email"
+            placeHolder="請輸入電子郵件"
+          />
+        </Col12>
+        <Col12>
+          <InputGroupWithSelect
+            className={`input-w-lg-2 ${smFull}`}
+            inputLabel="縣市"
+            options={cities}
+            required={true}
+          />
+          <InputGroup
+            className={`${wLg4} ${smFull}`}
+            inputLabel="地址"
+            type="text"
+            placeHolder="請輸入地址"
+          />
+        </Col12>
+      </Phase>
+      {/* <!-- shipping phase --> */}
+      {/* <form className="col col-12" data-phase="shipping">
           <h3 className="form-title">運送方式</h3>
           <section className="form-body col col-12">
             <label className="radio-group col col-12" data-price="0">
@@ -131,8 +130,8 @@ const RegisterForm = () => {
           </section>
         </form> */}
 
-        {/* <!-- credit-card phase --> */}
-        {/* <form className="col col-12" data-phase="credit-card">
+      {/* <!-- credit-card phase --> */}
+      {/* <form className="col col-12" data-phase="credit-card">
           <h3 className="form-title">付款資訊</h3>
           <section className="form-body col col-12">
             <div className="col col-12">
@@ -159,8 +158,7 @@ const RegisterForm = () => {
             </div>
           </section>
         </form> */}
-      </section>
-    </div>
+    </section>
   );
 };
 

@@ -25,15 +25,13 @@ function DataOrder({ dataOrder }) {
 
 const RegisterProgress = () => {
   return (
-    <div>
-      <section className="progress-container col col-12">
-        <DataPhase dataPhase="address" text={1} progressLabel="寄送地址" />
-        <DataOrder dataOrder={1} />
-        <DataPhase dataPhase="shipping" text={2} progressLabel="運送方式" />
-        <DataOrder dataOrder={2} />
-        <DataPhase dataPhase="credit-card" text={3} progressLabel="付款資訊" />
-      </section>
-    </div>
+    <section className="progress-container col col-12">
+      <DataPhase dataPhase="address" text={1} progressLabel="寄送地址" />
+      <DataOrder dataOrder={1} />
+      <DataPhase dataPhase="shipping" text={2} progressLabel="運送方式" />
+      <DataOrder dataOrder={2} />
+      <DataPhase dataPhase="credit-card" text={3} progressLabel="付款資訊" />
+    </section>
   );
 };
 
