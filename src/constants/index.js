@@ -37,4 +37,8 @@ const titles = [
   { value: "mx", name: "不明" },
 ];
 
-export { cities, titles };
+const wLg3 = "input-w-lg-3";
+const wLg4 = "input-w-lg-4";
+const smFull = "input-w-sm-full";
+
+export { cities, titles, wLg3, wLg4, smFull };
