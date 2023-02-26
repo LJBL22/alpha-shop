@@ -164,7 +164,7 @@ $phase-map: (
         @if $index == $key {
           display: flex;
         } @else {
-          display: flex;
+          display: none;
         }
       }
 
