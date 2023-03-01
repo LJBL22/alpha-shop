@@ -1,5 +1,5 @@
 import React from "react";
-import { InputGroup, Col12, Phase } from "./RegisterCommons";
+import { InputGroup, Col12, Phase } from "./StepCommons";
 import { wLg3, wLg4, smFull } from "src/constants";
 
 export default function StepThree() {

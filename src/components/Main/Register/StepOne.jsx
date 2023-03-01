@@ -1,11 +1,6 @@
 import React from "react";
 import { cities, titles, wLg3, wLg4, smFull } from "src/constants";
-import {
-  InputGroup,
-  InputGroupWithSelect,
-  Col12,
-  Phase,
-} from "./RegisterCommons";
+import { InputGroup, InputGroupWithSelect, Col12, Phase } from "./StepCommons";
 
 export default function StepOne() {
   return (

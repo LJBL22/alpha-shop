@@ -1,5 +1,5 @@
 import React from "react";
-import { RadioGroup, Phase } from "./RegisterCommons";
+import { RadioGroup, Phase } from "./StepCommons";
 
 export default function StepTwo() {
   return (
