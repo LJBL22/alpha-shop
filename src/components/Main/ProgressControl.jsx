@@ -1,37 +1,50 @@
-import React from "react";
 import { ReactComponent as RightArrow } from "src/assets/icons/right-arrow.svg";
 import { ReactComponent as LeftArrow } from "src/assets/icons/left-arrow.svg";
 
-function handleNextClick() {
-  //按下去以後，
-  //隱藏此 phase (none)、顯示下一個 phase (flex)
-  //上一步的 button 出現 (display:??)
-  // 一個 if/else
-  // 拆成三個 steps
-}
+const ProgressControl = ({ currentPhase, setCurrentPhase }) => {
+  const handleClick = (e) => {
+    if (e === "prev") {
+      if (currentPhase === 1) return;
+      setCurrentPhase((p) => p - 1);
+    } else if (e === "next") {
+      if (currentPhase === 3) return;
+      setCurrentPhase((p) => p + 1);
+    }
+  };
 
-const ProgressControl = () => {
   return (
     <section className="progress-control-container col col-lg-6 col-sm-12">
       <section className="button-group col col-12" data-phase="address">
-        <button className="next" onClick={handleNextClick}>
+        <button
+          className="next cursor-point"
+          onClick={() => handleClick("next")}
+        >
           下一步
-          <RightArrow className="cursor-point" />
+          <RightArrow />
         </button>
       </section>
       <section className="button-group col col-12" data-phase="shipping">
-        <button className="prev">
-          <LeftArrow className="cursor-point" />
+        <button
+          className="prev cursor-point"
+          onClick={() => handleClick("prev")}
+        >
+          <LeftArrow />
           上一步
         </button>
-        <button className="next">
+        <button
+          className="next cursor-point"
+          onClick={() => handleClick("next")}
+        >
           下一步
-          <RightArrow className="cursor-point" />
+          <RightArrow />
         </button>
       </section>
       <section className="button-group col col-12" data-phase="credit-card">
-        <button className="prev">
-          <LeftArrow className="cursor-point" />
+        <button
+          className="prev cursor-point"
+          onClick={() => handleClick("prev")}
+        >
+          <LeftArrow />
           上一步
         </button>
         <button className="next">確認下單</button>

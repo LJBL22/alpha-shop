@@ -3,24 +3,18 @@ import { ReactComponent as IconPgComplete } from "src/assets/icons/pg-complete.s
 
 function DataPhase({ dataPhase, text, progressLabel }) {
   return (
-    <>
-      <span className="progress-group" data-phase={dataPhase}>
-        <span className="progress-icon">
-          <span className="text">{text}</span>
-          <IconPgComplete className="icon cursor-point" />
-        </span>
-        <span className="progress-label">{progressLabel}</span>
+    <span className="progress-group" data-phase={dataPhase}>
+      <span className="progress-icon">
+        <span className="text">{text}</span>
+        <IconPgComplete className="icon cursor-point" />
       </span>
-    </>
+      <span className="progress-label">{progressLabel}</span>
+    </span>
   );
 }
 
 function DataOrder({ dataOrder }) {
-  return (
-    <>
-      <span className="progress-bar" data-order={dataOrder}></span>
-    </>
-  );
+  return <span className="progress-bar" data-order={dataOrder}></span>;
 }
 
 const RegisterProgress = () => {

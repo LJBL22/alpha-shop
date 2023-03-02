@@ -2,12 +2,12 @@ import React from "react";
 import RegisterForm from "./RegisterForm";
 import RegisterProgress from "./RegisterProgress";
 
-const Register = () => {
+const Register = ({ currentPhase }) => {
   return (
     // register
     <section
       className="register-container col col-lg-6 col-sm-12"
-      data-phase="1"
+      data-phase={currentPhase}
       data-total-price="0"
     >
       {/* register-title */}
