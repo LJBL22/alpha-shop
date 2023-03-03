@@ -13,14 +13,21 @@ export default function Cart({ shippingFee }) {
     .reduce((sum, price) => sum + price);
 
   const totalAmount =
-    shippingFee === 500 ? 500 + productsTotalAmount : 0 + productsTotalAmount;
+    typeof shippingFee === "number"
+      ? shippingFee + productsTotalAmount
+      : 0 + productsTotalAmount;
   return (
     <section className="cart-container col col-lg-5 col-sm-12">
       <h3 className="cart-title">購物籃</h3>
       <section className="product-list col col-12" data-total-price="0">
         <Item cartItems={cartItems} onQuantityChange={setCartItems} />
       </section>
-      <CartInfo title="運費" price={shippingFee} />
+      <CartInfo
+        title="運費"
+        price={
+          typeof shippingFee === "number" ? "$ " + shippingFee : shippingFee
+        }
+      />
       <CartInfo title="小計" price={"$ " + totalAmount.toLocaleString()} />
     </section>
   );

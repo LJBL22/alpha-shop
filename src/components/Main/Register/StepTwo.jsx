@@ -12,7 +12,7 @@ export default function StepTwo({ onRadioChange }) {
         onRadioChange={onRadioChange}
       />
       <RadioGroup
-        shippingFee={"$500"}
+        shippingFee={500}
         shippingType={"dhl"}
         text="DHL 貨運"
         period="48 小時內送達"

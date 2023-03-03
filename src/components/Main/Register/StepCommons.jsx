@@ -19,7 +19,9 @@ function RadioGroup({
       <div className="radio-info">
         <div className="col col-12">
           <div className="text">{text}</div>
-          <div className="price">{shippingFee}</div>
+          <div className="price">
+            {typeof shippingFee === "number" ? "$ " + shippingFee : shippingFee}
+          </div>
         </div>
         <div className="period col col-12">{period}</div>
       </div>
