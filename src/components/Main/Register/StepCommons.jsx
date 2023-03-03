@@ -1,13 +1,20 @@
 import React from "react";
 
-function RadioGroup({ dataPrice, id, checked = false, text, period }) {
+function RadioGroup({
+  dataPrice,
+  id,
+  checked = false,
+  text,
+  period,
+  priceText,
+}) {
   return (
     <label className="radio-group col col-12" data-price={dataPrice}>
       <input id={id} type="radio" name="shipping" checked={checked} />
       <div className="radio-info">
         <div className="col col-12">
           <div className="text">{text}</div>
-          <div className="price"></div>
+          <div className="price">{priceText}</div>
         </div>
         <div className="period col col-12">{period}</div>
       </div>
