@@ -1,24 +1,25 @@
-import React from "react";
 import { ReactComponent as IconMinus } from "src/assets/icons/minus.svg";
 import { ReactComponent as IconPlus } from "src/assets/icons/plus.svg";
+import { initialItems } from "src/constants";
+import { useState } from "react";
 
-const initialItems = [
-  {
-    id: "1",
-    name: "貓咪罐罐",
-    img: "https://picsum.photos/300/300?text=1",
-    price: 100,
-    quantity: 2,
-  },
-  {
-    id: "2",
-    name: "貓咪干干",
-    img: "https://picsum.photos/300/300?text=2",
-    price: 200,
-    quantity: 1,
-  },
-];
-
+export default function Cart() {
+  const [cartItems, setTotalPrice] = useState(initialItems);
+  const totalPrice = cartItems
+    .map((item) => item.price * item.quantity)
+    .reduce((sum, price) => sum + price);
+  return (
+    <section className="cart-container col col-lg-5 col-sm-12">
+      <h3 className="cart-title">購物籃</h3>
+      <section className="product-list col col-12" data-total-price="0">
+        {initialItems.map((item) => (
+          <Item key={item.id} {...item} />
+        ))}
+      </section>
+      <CartInfo price={totalPrice} />
+    </section>
+  );
+}
 const Item = ({ id, quantity, price, img, name }) => {
   return (
     <>
@@ -37,7 +38,6 @@ const Item = ({ id, quantity, price, img, name }) => {
               <IconPlus className="product-action plus" />
             </div>
           </div>
-          $3,000
           <div className="price" />
         </div>
       </div>
@@ -45,7 +45,7 @@ const Item = ({ id, quantity, price, img, name }) => {
   );
 };
 
-const CartInfo = () => {
+const CartInfo = ({ price }) => {
   return (
     <>
       <section className="cart-info shipping col col-12">
@@ -54,22 +54,8 @@ const CartInfo = () => {
       </section>
       <section className="cart-info total col col-12">
         <div className="text">小計</div>
-        <div className="price">$6,000</div>
+        <div className="price">{price}</div>
       </section>
     </>
   );
 };
-
-export default function Cart() {
-  return (
-    <section className="cart-container col col-lg-5 col-sm-12">
-      <h3 className="cart-title">購物籃</h3>
-      <section className="product-list col col-12" data-total-price="0">
-        {initialItems.map((item) => (
-          <Item key={item.id} {...item} />
-        ))}
-      </section>
-      <CartInfo />
-    </section>
-  );
-}
