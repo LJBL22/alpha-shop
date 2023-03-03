@@ -42,14 +42,14 @@ const initialItems = [
     id: "1",
     name: "貓咪罐罐",
     img: "https://picsum.photos/300/300?text=1",
-    price: 3999,
+    price: 617,
     quantity: 2,
   },
   {
     id: "2",
     name: "貓咪干干",
     img: "https://picsum.photos/300/300?text=2",
-    price: 1299,
+    price: 524,
     quantity: 5,
   },
 ];
