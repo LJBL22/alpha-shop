@@ -2,7 +2,12 @@ import React from "react";
 import RegisterForm from "./RegisterForm";
 import RegisterProgress from "./RegisterProgress";
 
-const Register = ({ currentPhase }) => {
+const Register = ({
+  currentPhase,
+  shippingFee,
+  setShippingFee,
+  onRadioChange,
+}) => {
   return (
     // register
     <section
@@ -13,7 +18,11 @@ const Register = ({ currentPhase }) => {
       {/* register-title */}
       <h2 className="register-title col col-12">結帳</h2>
       <RegisterProgress />
-      <RegisterForm />
+      <RegisterForm
+        shippingFee={shippingFee}
+        setShippingFee={setShippingFee}
+        onRadioChange={onRadioChange}
+      />
     </section>
   );
 };

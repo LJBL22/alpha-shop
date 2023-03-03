@@ -6,11 +6,20 @@ import { useState } from "react";
 
 const Main = () => {
   const [currentPhase, setCurrentPhase] = useState(1);
+  const [shippingFee, setShippingFee] = useState("免費");
+  const handleRadioChange = (price) => {
+    setShippingFee(price);
+  };
   return (
     <main className="site-main">
       <div className="main-container">
-        <Register currentPhase={currentPhase} />
-        <Cart />
+        <Register
+          currentPhase={currentPhase}
+          shippingFee={shippingFee}
+          setShippingFee={setShippingFee}
+          onRadioChange={handleRadioChange}
+        />
+        <Cart shippingFee={shippingFee} setShippingFee={setShippingFee} />
         <ProgressControl
           currentPhase={currentPhase}
           setCurrentPhase={setCurrentPhase}

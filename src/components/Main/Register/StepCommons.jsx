@@ -1,20 +1,25 @@
 import React from "react";
 
 function RadioGroup({
-  dataPrice,
-  id,
-  checked = false,
+  shippingFee,
+  shippingType,
   text,
   period,
-  priceText,
+  onRadioChange,
 }) {
   return (
-    <label className="radio-group col col-12" data-price={dataPrice}>
-      <input id={id} type="radio" name="shipping" checked={checked} />
+    <label className="radio-group col col-12" data-price={shippingFee}>
+      <input
+        id={`shipping-${shippingType}`}
+        type="radio"
+        name="shipping"
+        defaultChecked={shippingType === "standard" && true}
+        onChange={() => onRadioChange(shippingFee)}
+      />
       <div className="radio-info">
         <div className="col col-12">
           <div className="text">{text}</div>
-          <div className="price">{priceText}</div>
+          <div className="price">{shippingFee}</div>
         </div>
         <div className="period col col-12">{period}</div>
       </div>
