@@ -13,17 +13,13 @@ function DataPhase({ dataPhase, text, progressLabel }) {
   );
 }
 
-function DataOrder({ dataOrder }) {
-  return <span className="progress-bar" data-order={dataOrder}></span>;
-}
-
 const RegisterProgress = () => {
   return (
     <section className="progress-container col col-12">
       <DataPhase dataPhase="address" text={1} progressLabel="寄送地址" />
-      <DataOrder dataOrder={1} />
+      <span className="progress-bar" data-order="1"></span>
       <DataPhase dataPhase="shipping" text={2} progressLabel="運送方式" />
-      <DataOrder dataOrder={2} />
+      <span className="progress-bar" data-order="2"></span>
       <DataPhase dataPhase="credit-card" text={3} progressLabel="付款資訊" />
     </section>
   );
