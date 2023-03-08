@@ -1,10 +1,11 @@
 import { ReactComponent as IconMinus } from "src/assets/icons/minus.svg";
 import { ReactComponent as IconPlus } from "src/assets/icons/plus.svg";
-import { initialItems } from "src/constants";
-import { useState } from "react";
+import { CartContext } from "src/components/Main/CartContext.js";
+import { useState, useContext } from "react";
 
 export default function Cart({ shippingFee }) {
-  //設定購物車產品狀態
+  //改直接由 context 取資料 （暫不需 provider)
+  const initialItems = useContext(CartContext);
   const [cartItems, setCartItems] = useState(initialItems);
   //加總購物車裡的品項金額
   //傳遞 props 到 <Item>

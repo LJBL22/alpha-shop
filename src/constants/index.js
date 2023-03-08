@@ -37,25 +37,8 @@ const titles = [
   { value: "mx", name: "不明" },
 ];
 
-const initialItems = [
-  {
-    id: "1",
-    name: "貓咪罐罐",
-    img: "https://picsum.photos/300/300?text=1",
-    price: 617,
-    quantity: 2,
-  },
-  {
-    id: "2",
-    name: "貓咪干干",
-    img: "https://picsum.photos/300/300?text=2",
-    price: 524,
-    quantity: 5,
-  },
-];
-
 const wLg3 = "input-w-lg-3";
 const wLg4 = "input-w-lg-4";
 const smFull = "input-w-sm-full";
 
-export { cities, titles, wLg3, wLg4, smFull, initialItems };
+export { cities, titles, wLg3, wLg4, smFull };
