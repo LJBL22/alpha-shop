@@ -1,7 +1,10 @@
 import { ReactComponent as RightArrow } from "src/assets/icons/right-arrow.svg";
 import { ReactComponent as LeftArrow } from "src/assets/icons/left-arrow.svg";
+import { useContext } from "react";
+import { CreditCardInfoContext } from "src/components/Main/CartContext";
 
 const ProgressControl = ({ currentPhase, setCurrentPhase }) => {
+  const cardInfo = useContext(CreditCardInfoContext);
   const handleClick = (e) => {
     if (e === "prev") {
       if (currentPhase === 1) return;
@@ -10,6 +13,11 @@ const ProgressControl = ({ currentPhase, setCurrentPhase }) => {
       if (currentPhase === 3) return;
       setCurrentPhase((p) => p + 1);
     }
+  };
+  // 2-2 印出來
+  // 『我要怎麼拿到我已經存完的資料』關鍵在 2-1 實作成功
+  const handleSubmit = (e) => {
+    console.log(cardInfo);
   };
 
   return (
@@ -47,7 +55,9 @@ const ProgressControl = ({ currentPhase, setCurrentPhase }) => {
           <LeftArrow />
           上一步
         </button>
-        <button className="next">確認下單</button>
+        <button className="next cursor-point" onClick={handleSubmit}>
+          確認下單
+        </button>
       </section>
     </section>
   );

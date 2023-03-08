@@ -30,11 +30,25 @@ function RadioGroup({
   );
 }
 
-function InputGroup({ className, inputLabel, type, placeHolder }) {
+function InputGroup({
+  className,
+  inputLabel,
+  type,
+  placeHolder,
+  value,
+  name,
+  onChange,
+}) {
   return (
     <div className={`input-group ${className}`}>
       <div className="input-label">{inputLabel}</div>
-      <input type={type} placeholder={placeHolder} />
+      <input
+        type={type}
+        placeholder={placeHolder}
+        value={value}
+        name={name}
+        onChange={onChange}
+      />
     </div>
   );
 }
