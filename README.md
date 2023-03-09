@@ -4,8 +4,10 @@
 
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![](./sumbmitted-phase3.png)
-_Phase 3 submitted screenshot (2023 Mar 3 Fri.)_
+![](./submitted-phase4.png)
+_Phase 4 submitted screenshot (2023 Mar 9 Thur.)_
+
+~~_Phase 3 (2023 Mar 3 Fri.)_~~
 
 ~~_Phase 2 (2023 Feb 16 Thur.)_~~
 
@@ -20,6 +22,10 @@ Phase 2: use rendering list skill, import svg as React Component, using constant
 Phase 3: start to use hook: useState:
 Left column: register progress, three phases, and radio group state changing.
 Right column: cart minus & plus quantity, total amounts including shipping fee.
+
+Phase 4: hook: useContext:
+cartContext: get cartItem info from context and use it across components by lifting the state up from Cart.jsx to Main.jsx
+cardInfoContext: store user's card info and print it at console while clicking submit button
 
 ## 🧑🏻‍💻 Installation
 
