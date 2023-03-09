@@ -1,27 +1,16 @@
 import { ReactComponent as IconMinus } from "src/assets/icons/minus.svg";
 import { ReactComponent as IconPlus } from "src/assets/icons/plus.svg";
-import { CartContext } from "src/components/Main/CartContext.js";
-import { useState, useContext } from "react";
+import { useContext } from "react";
+import { CartContext } from "src/components/Main/CartContext";
 
-export default function Cart({ shippingFee }) {
-  //改直接由 context 取資料 （暫不需 provider)
-  const initialItems = useContext(CartContext);
-  const [cartItems, setCartItems] = useState(initialItems);
-  //加總購物車裡的品項金額
-  //傳遞 props 到 <Item>
-  const productsTotalAmount = cartItems
-    .map((item) => item.price * item.quantity)
-    .reduce((sum, price) => sum + price);
-
-  const totalAmount =
-    typeof shippingFee === "number"
-      ? shippingFee + productsTotalAmount
-      : 0 + productsTotalAmount;
+//這裡三個 prop 都是由 main > Cart 傳遞而來 (非 context )
+export default function Cart({ shippingFee, onQuantityChange, totalAmount }) {
+  // console.log(`這裡是 cart ${totalAmount}`);
   return (
     <section className="cart-container col col-lg-5 col-sm-12">
       <h3 className="cart-title">購物籃</h3>
       <section className="product-list col col-12" data-total-price="0">
-        <Item cartItems={cartItems} onQuantityChange={setCartItems} />
+        <Item onQuantityChange={onQuantityChange} />
       </section>
       <CartInfo
         title="運費"
@@ -33,10 +22,11 @@ export default function Cart({ shippingFee }) {
     </section>
   );
 }
-
-//將 setCartItems 作為 props 傳遞時，更名為較有意義的 onQuantityChange
-const Item = ({ cartItems, onQuantityChange }) => {
-  // 商品數量增減
+const Item = ({ onQuantityChange }) => {
+  // useContext 會先去 provider 取值，因此這裡取得物件 { cartItems, totalAmount }，這裡只會用到 cartItems
+  // 點記法：const cartItems = useContext(CartContext).cartItems;
+  // 解構賦值寫法：不用再取名變數、也可取到 context 指定 key-value pair 的值
+  const { cartItems } = useContext(CartContext);
   function handleAmountClick(e) {
     const targetId = e.target.closest(".product-container").id;
     const isMinus = e.target.parentElement.classList.contains("minus");
@@ -54,7 +44,6 @@ const Item = ({ cartItems, onQuantityChange }) => {
     onQuantityChange(selectedItem);
   }
 
-  // 動態渲染商品清單
   const cartLists = cartItems.map((item) => {
     return (
       <div
@@ -90,11 +79,9 @@ const Item = ({ cartItems, onQuantityChange }) => {
 
 const CartInfo = ({ title, price }) => {
   return (
-    <>
-      <section className="cart-info shipping col col-12">
-        <div className="text">{title}</div>
-        <div className="price">{price}</div>
-      </section>
-    </>
+    <section className="cart-info shipping col col-12">
+      <div className="text">{title}</div>
+      <div className="price">{price}</div>
+    </section>
   );
 };

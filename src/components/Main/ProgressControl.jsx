@@ -1,10 +1,13 @@
 import { ReactComponent as RightArrow } from "src/assets/icons/right-arrow.svg";
 import { ReactComponent as LeftArrow } from "src/assets/icons/left-arrow.svg";
 import { useContext } from "react";
-import { CreditCardInfoContext } from "src/components/Main/CartContext";
+import { CartContext, CardInfoContext } from "src/components/Main/CartContext";
 
 const ProgressControl = ({ currentPhase, setCurrentPhase }) => {
-  const cardInfo = useContext(CreditCardInfoContext);
+  //去最近的 Provider 取資料，解構賦值寫法：
+  const { cardInfo } = useContext(CardInfoContext);
+  const { totalAmount } = useContext(CartContext);
+
   const handleClick = (e) => {
     if (e === "prev") {
       if (currentPhase === 1) return;
@@ -14,10 +17,10 @@ const ProgressControl = ({ currentPhase, setCurrentPhase }) => {
       setCurrentPhase((p) => p + 1);
     }
   };
-  // 2-2 印出來
-  // 『我要怎麼拿到我已經存完的資料』關鍵在 2-1 實作成功
+  // A6 功能三：印出小計與 card info
   const handleSubmit = (e) => {
     console.log(cardInfo);
+    console.log(totalAmount);
   };
 
   return (
