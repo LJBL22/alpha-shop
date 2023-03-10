@@ -17,16 +17,22 @@ const cartItems = [
   },
 ]
 
-const cardInfo = {
-  cardholder: "",
-  cardNumber: "",
-  expiration: "",
-  cvc: ""
-}
+//寫法一 搭配 defaultValue={cardInfo}
+const cardInfo = {}
+
+//寫法二 搭配 value={cardInfo.cardholder}
+//初始值須提供如下的鍵值物件：
+// const cardInfo = {
+//   cardholder: "",
+//   cardNumber: "",
+//   expiration: "",
+//   cvc: ""
+// }
+//若為空則代表沒有初始值、會變成 uncontrolled input ，因此在鍵入時會跳錯誤。
 
 //提醒：createContext 內的參數是初始值，子元件會先從最近的 Provider 取值，若無才從此拿初始值。
 export const CartContext = createContext(cartItems)
 
 //A6 功能二
-//創立一個 context 儲存信用卡資料（物件）,不能為空物件，否則會跳錯誤：試圖想更改 uncontrolled input
+//創立一個 context 儲存信用卡資料（物件）
 export const CardInfoContext = createContext(cardInfo)

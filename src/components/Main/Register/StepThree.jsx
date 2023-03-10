@@ -27,7 +27,7 @@ export default function StepThree() {
           type="text"
           placeHolder="John Doe"
           name="cardholder"
-          value={cardInfo.cardholder}
+          defaultValue={cardInfo}
           onChange={handleChange}
         />
       </Col12>
@@ -38,7 +38,7 @@ export default function StepThree() {
           type="text"
           placeHolder="1111 2222 3333 4444"
           name="cardNumber"
-          value={cardInfo.cardNumber}
+          defaultValue={cardInfo}
           onChange={handleChange}
         />
       </Col12>
@@ -49,7 +49,7 @@ export default function StepThree() {
           type="text"
           placeHolder="MM/YY"
           name="expiration"
-          value={cardInfo.expiration}
+          defaultValue={cardInfo}
           onChange={handleChange}
         />
         <InputGroup
@@ -58,7 +58,7 @@ export default function StepThree() {
           type="text"
           placeHolder="123"
           name="cvc"
-          value={cardInfo.cvc}
+          defaultValue={cardInfo}
           onChange={handleChange}
         />
       </Col12>
